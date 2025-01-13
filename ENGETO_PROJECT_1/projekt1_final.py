@@ -54,13 +54,13 @@ print(separator)
 
 if registered_users.get(username) == password:
     print(f"Welcome to the app, {username.capitalize()}.")
-    print(f"We have 3 texts to be analyzed.", separator, sep ="\n")
+    print(f"We have {len(TEXTS)} texts to be analyzed.", separator, sep ="\n")
 
 # select number
 
     try:
-        selected_number = int(input("Enter a number between 1 and 3 to select:"))
-        if selected_number not in range(1,4):
+        selected_number = int(input("Enter a number between 1 and {len(TEXTS)} to select:"))
+        if selected_number not in range(1,len(TEXTS) + 1):
             print(f"Selected number not in range, terminating the program...", separator, sep="\n")
             quit()
         else:
